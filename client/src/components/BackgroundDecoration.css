@@ -1,0 +1,257 @@
+.background-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Floating Balloons */
+.floating-balloon {
+  position: absolute;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0.15;
+  animation: floatUp 20s ease-in-out infinite;
+}
+
+.floating-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.balloon-lg {
+  width: 120px;
+  height: 140px;
+}
+
+.balloon-md {
+  width: 80px;
+  height: 95px;
+}
+
+.balloon-sm {
+  width: 60px;
+  height: 72px;
+}
+
+.balloon-1 {
+  top: 80%;
+  left: 10%;
+  background: linear-gradient(135deg, var(--primary-pink), var(--primary-peach));
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.balloon-2 {
+  top: 70%;
+  right: 15%;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-lavender));
+  animation-delay: 5s;
+  animation-duration: 30s;
+}
+
+.balloon-3 {
+  top: 60%;
+  left: 25%;
+  background: linear-gradient(135deg, var(--primary-peach), var(--primary-mint));
+  animation-delay: 10s;
+  animation-duration: 22s;
+}
+
+.balloon-4 {
+  top: 85%;
+  right: 30%;
+  background: linear-gradient(135deg, var(--primary-lavender), var(--primary-pink));
+  animation-delay: 3s;
+  animation-duration: 28s;
+}
+
+.balloon-5 {
+  top: 75%;
+  left: 50%;
+  background: linear-gradient(135deg, var(--primary-mint), var(--primary-blue));
+  animation-delay: 8s;
+  animation-duration: 26s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  opacity: 0.3;
+  animation: drift 40s ease-in-out infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+}
+
+.cloud-1 {
+  width: 200px;
+  height: 60px;
+  top: 10%;
+  right: 5%;
+  animation-delay: 0s;
+}
+
+.cloud-1::before {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  right: 20px;
+}
+
+.cloud-1::after {
+  width: 100px;
+  height: 70px;
+  top: -30px;
+  right: 80px;
+}
+
+.cloud-2 {
+  width: 150px;
+  height: 50px;
+  top: 25%;
+  left: 10%;
+  animation-delay: 10s;
+  animation-duration: 50s;
+}
+
+.cloud-2::before {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 20px;
+}
+
+.cloud-2::after {
+  width: 70px;
+  height: 50px;
+  top: -20px;
+  left: 60px;
+}
+
+.cloud-3 {
+  width: 180px;
+  height: 55px;
+  top: 50%;
+  right: 15%;
+  animation-delay: 20s;
+  animation-duration: 45s;
+}
+
+.cloud-3::before {
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  right: 30px;
+}
+
+.cloud-3::after {
+  width: 85px;
+  height: 60px;
+  top: -25px;
+  right: 80px;
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
+
+/* Gradient Orbs */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  top: -10%;
+  right: -10%;
+  background: radial-gradient(circle, var(--primary-lavender), transparent);
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 350px;
+  height: 350px;
+  bottom: -10%;
+  left: -10%;
+  background: radial-gradient(circle, var(--primary-blue), transparent);
+  animation-delay: 2s;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  left: 50%;
+  background: radial-gradient(circle, var(--primary-peach), transparent);
+  animation-delay: 4s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gradient-orb {
+    filter: blur(60px);
+  }
+
+  .orb-1,
+  .orb-2,
+  .orb-3 {
+    width: 250px;
+    height: 250px;
+  }
+}
