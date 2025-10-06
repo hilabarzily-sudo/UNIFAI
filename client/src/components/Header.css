@@ -1,0 +1,129 @@
+.header {
+  border-radius: 24px;
+  padding: 24px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary-lavender), var(--primary-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 24px rgba(230, 201, 255, 0.4);
+}
+
+.logo-text h1 {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-lavender), var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 4px 0 0 0;
+  font-weight: 400;
+}
+
+.header-decorations {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.decoration-balloon {
+  width: 40px;
+  height: 48px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+}
+
+.decoration-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 12px;
+  background: var(--text-secondary);
+  opacity: 0.3;
+}
+
+.balloon-1 {
+  background: linear-gradient(135deg, var(--primary-pink) 0%, rgba(255, 179, 186, 0.6) 100%);
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.balloon-2 {
+  background: linear-gradient(135deg, var(--primary-peach) 0%, rgba(255, 215, 190, 0.6) 100%);
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.balloon-3 {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, rgba(186, 225, 255, 0.6) 100%);
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 24px;
+    border-radius: 20px;
+  }
+
+  .logo-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-text h1 {
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 12px;
+  }
+
+  .decoration-balloon {
+    width: 32px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .header-decorations {
+    display: none;
+  }
+}
