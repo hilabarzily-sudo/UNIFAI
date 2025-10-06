@@ -1,0 +1,21 @@
+.typing-bubble {
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  background: rgba(45, 95, 63, 0.1);
+  border: 1px solid rgba(111, 191, 159, 0.2);
+  display: inline-block;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: block;
+}
