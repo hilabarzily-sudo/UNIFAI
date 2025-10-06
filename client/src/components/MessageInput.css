@@ -1,0 +1,127 @@
+.message-input-container {
+  padding: 1.5rem 2rem 2rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.message-input-form {
+  padding: 0.75rem 1rem;
+  transition: var(--transition-smooth);
+}
+
+.message-input-form:focus-within {
+  box-shadow: 0 8px 32px 0 rgba(168, 197, 218, 0.3);
+  border-color: rgba(168, 197, 218, 0.4);
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.message-textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding: 0.5rem 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.message-textarea::placeholder {
+  color: var(--text-light);
+}
+
+.message-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.voice-button,
+.send-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+}
+
+.voice-button {
+  background: linear-gradient(135deg, 
+    rgba(197, 185, 229, 0.3), 
+    rgba(168, 197, 218, 0.3)
+  );
+  color: var(--primary-purple);
+}
+
+.voice-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, 
+    rgba(197, 185, 229, 0.5), 
+    rgba(168, 197, 218, 0.5)
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(197, 185, 229, 0.3);
+}
+
+.send-button {
+  background: linear-gradient(135deg, #F8B4B4, #FAD5C5);
+  color: white;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px) rotate(15deg);
+  box-shadow: 0 6px 16px rgba(248, 180, 180, 0.4);
+}
+
+.send-button:disabled,
+.voice-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.send-button:disabled:hover,
+.voice-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .message-input-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .message-input-form {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .message-textarea {
+    font-size: 0.9rem;
+  }
+
+  .voice-button,
+  .send-button {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}

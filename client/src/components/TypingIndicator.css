@@ -1,0 +1,18 @@
+.typing-bubble {
+  padding: 1rem 1.5rem;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gradient-2);
+  display: inline-block;
+}
