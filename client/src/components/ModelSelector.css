@@ -1,0 +1,140 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.model-selector {
+  width: 100%;
+  max-width: 700px;
+  max-height: 80vh;
+  border-radius: 24px;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.selector-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.close-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-white);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: var(--glass-white-hover);
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.model-card {
+  padding: 20px;
+  border-radius: 16px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.model-card:hover {
+  border-color: var(--glass-border);
+}
+
+.model-card.selected {
+  background: var(--glass-dark);
+  border-color: var(--accent-green);
+  box-shadow: 0 0 20px rgba(74, 157, 127, 0.3);
+}
+
+.model-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.model-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.check-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-provider {
+  font-size: 12px;
+  color: var(--mint);
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+.model-description {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 8px 0 0 0;
+  line-height: 1.4;
+}
+
+.no-models {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .model-selector {
+    padding: 20px;
+    max-height: 90vh;
+  }
+
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selector-header h2 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,58 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated gradient orbs in background */
+.app::before,
+.app::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  z-index: -1;
+  animation: morphing 15s ease-in-out infinite;
+}
+
+.app::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
+  top: -250px;
+  right: -250px;
+  animation-delay: 0s;
+}
+
+.app::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--light-green) 0%, transparent 70%);
+  bottom: -200px;
+  left: -200px;
+  animation-delay: 7s;
+}
+
+@keyframes morphing {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .app::before,
+  .app::after {
+    width: 300px;
+    height: 300px;
+  }
+}
