@@ -1,0 +1,69 @@
+.background-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(111, 191, 159, 0.3) 0%, 
+    rgba(45, 95, 63, 0.1) 50%,
+    transparent 100%
+  );
+  filter: blur(40px);
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  right: -200px;
+  background: radial-gradient(circle, 
+    rgba(111, 191, 159, 0.4) 0%, 
+    rgba(45, 95, 63, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+.orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -250px;
+  left: -250px;
+  background: radial-gradient(circle, 
+    rgba(61, 127, 95, 0.3) 0%, 
+    rgba(26, 61, 42, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .orb-1,
+  .orb-2 {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .orb-1 {
+    top: -100px;
+    right: -100px;
+  }
+  
+  .orb-2 {
+    bottom: -100px;
+    left: -100px;
+  }
+}

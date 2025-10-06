@@ -1,0 +1,97 @@
+.provider-selector {
+  position: relative;
+}
+
+.provider-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(45, 95, 63, 0.1);
+  border: 1px solid rgba(111, 191, 159, 0.2);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.provider-button:hover {
+  background: rgba(45, 95, 63, 0.15);
+  border-color: rgba(111, 191, 159, 0.3);
+}
+
+.provider-name {
+  white-space: nowrap;
+}
+
+.provider-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 998;
+}
+
+.provider-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 200px;
+  background: rgba(26, 47, 37, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(111, 191, 159, 0.2);
+  border-radius: 12px;
+  padding: 0.5rem;
+  z-index: 999;
+  box-shadow: 0 12px 40px rgba(15, 31, 23, 0.5);
+}
+
+.provider-option {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.provider-option:hover {
+  background: rgba(45, 95, 63, 0.2);
+}
+
+.provider-option.selected {
+  background: rgba(45, 95, 63, 0.25);
+  color: var(--color-accent);
+}
+
+.option-name {
+  font-weight: 500;
+}
+
+.option-model {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .provider-button {
+    padding: 0.4rem 0.875rem;
+    font-size: 0.8rem;
+  }
+
+  .provider-dropdown {
+    min-width: 180px;
+  }
+}
